@@ -69,4 +69,60 @@ background-color: #DCDCDC;
 }
 
  
- 
+.image-container {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+.image-box {
+width: 100px;
+height: 100px;
+overflow: hidden;
+border: 5px solid #ccc;
+position: relative;
+}
+.image-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.image-box:hover .cancel-btn {
+display: block;
+}
+.cancel-btn {
+display: none;
+position: absolute;
+top: 0;
+right: 0;
+background-color: red;
+color: white;
+font-size: 12px;
+padding: 5px;
+cursor: pointer;
+}
+.large-image {
+display: none;
+position: fixed;
+top: 50%;
+left: 40%;
+transform: translate(-50%, -50%);
+max-width: 90%;
+max-height: 90%;
+border: 1px solid #ccc;
+background-color: white;
+}
+.large-image img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+.close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: black;
+color: white;
+border: none;
+font-size: 48px;
+cursor: pointer;
+}

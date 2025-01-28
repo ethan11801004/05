@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>設備工程驗收單</title>
+  <title>Untitled</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -120,20 +120,24 @@
 <textarea name="asset_change_comments" style="height: 100px;" class="custom-textarea" placeholder="請填寫異動內容" required></textarea>
 </td>
 </tr>
-<tr class="file-upload-container">
+
+  
 <td>
-<label for="photoUpload">上傳照片：</label>
-<input type="file" name="photos[]" id="photoUpload" accept="image/*" multiple><br><br>
-<div id="imagePreviewContainer">
-<img id="uploaded-image" src="" alt="預覽圖片">
-<button type="button" id="cancelUpload" class="delete-btn">取消上傳</button>
+<input type="file" id="fileInput" multiple>
+<div class="image-container" id="imageContainer"></div>
+<div class="large-image" id="largeImage">
+<button class="close-btn" id="closeBtn">&times;</button>
+<img id="largeImageContent" src="">
 </div>
 </td>
 </tr>
+   
 </table>
-</form> 
-</div>
 
+</form> 
+
+</div>
+ 
 <script></script>
 </body>
 
