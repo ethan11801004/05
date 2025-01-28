@@ -126,3 +126,30 @@ largeImage.style.display = 'none';
 });
 
 
+
+let rotationDegree = 0;
+let scaleFactor = 1; // 記錄當前的縮放比例
+
+function rotateImage() {
+  rotationDegree += 90;  // 每次點擊旋轉 90 度
+  const img = document.querySelector('.large-image img');
+  img.style.transform = `rotate(${rotationDegree}deg)`;
+}
+
+  // 計算新的旋轉角度
+  img.style.transform = `rotate(${rotationDegree}deg) scale(${scaleFactor})`;
+
+  // 根據圖片的尺寸調整容器大小
+  const imgRect = img.getBoundingClientRect();
+  largeImage.style.width = `${imgRect.width}px`;
+  largeImage.style.height = `${imgRect.height}px`;
+
+
+function zoomImage(factor) {
+  const img = document.querySelector('.large-image img');
+  scaleFactor *= factor; // 計算新的縮放比例
+  
+  // 設置圖片的縮放比例
+  img.style.transform = `rotate(${rotationDegree}deg) scale(${scaleFactor})`;
+}
+

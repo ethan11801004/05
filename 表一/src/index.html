@@ -116,8 +116,13 @@
 <input type="file" id="fileInput" multiple>
 <div class="image-container" id="imageContainer"></div>
 <div class="large-image" id="largeImage">
-<button class="close-btn" id="closeBtn">&times;</button>
+<button class="close-btn" id="closeBtn">x</button>
+<button class="rotate-btn" onclick="rotateImage()">↻</button>
 <img id="largeImageContent" src="">
+<button class="zoom-in-btn" onclick="zoomImage(1.1)">+</button> <!-- 放大按鈕 -->
+<button class="zoom-out-btn" onclick="zoomImage(0.9)">−</button> <!-- 縮小按鈕 -->
+ 
+  
 </div>
 </td>
 </tr>
