@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+<meta charset="UTF-8">
+<title>設備工程驗收單</title>
+</head>
+<style></style>  
+<body>
+<div class="container">
+    
+
+<form action="process_form.php" method="POST" enctype="multipart/form-data">
+<input type="submit" value="提交表單">
+<br>
+<label>單別： 0O4-02 設備、工程驗收單</label><br>
+<label>單號：</label>
+<input type="text" name="form_no"><br>
+<label>主旨：</label>
+<input type="text" name="subject" style="width: 60%;" required><br><br>
+      
+<header>
+<h2>oooo企業股份有限公司</h2>  
+<h3>設備、工程驗收單</h3>
+</header>
+<br>
+  
+<table>
+<tr>
+<th>驗收日期</th><td><input type="date" name="acceptance_date" style="height: 30px; width: 90%;" required></td>
+<th>設備編號</th><td><input type="text" name="equipment_no" style="height: 30px; width: 90%;" required></td>
+<th>設備名稱</th><td><input type="text" name="equipment_name" style="height: 30px; width: 90%;" required></td>
+<th>資產類別</th><td><select id="assetType4" name="asset_type" style="height: 30px; width: 90%;" required></select></td>
+</tr>
+<tr>
+<th>規格廠牌</th><td><input type="text" name="brand_spec" style="height: 30px; width: 90%;"></td>
+<th>廠商名稱</th><td><input type="text" name="vendor_name" style="height: 30px; width: 90%;"></td>
+<th>承包金額</th><td><input type="text" name="contract_amount" style="height: 30px; width: 90%;"></td>
+<th>驗收類別</th><td><select id="assetType" name="inspection_type" style="height: 30px; width: 90%;" required></select></td>
+</tr>
+<tr>
+<th>廠商電話</th><td><input type="text" name="vendor_phone" style="height: 30px; width: 90%;"></td>
+<th>試產單號</th><td><input type="text" name="trial_no" style="height: 30px; width: 90%;"></td>
+<th>試產數量</th><td><input type="number" name="trial_quantity" style="height: 30px; width: 90%;"></td>
+<th>專案編號</th><td><input type="text" name="project_no" style="height: 30px; width: 90%;"></td>
+</tr>
+<tr>
+<th>使用部門</th><td><select id="assetType2" name="department" style="height: 30px; width: 90%;" required></select></td>
+<th>採購單號</th><td><input type="text" name="purchase_no" style="height: 30px; width: 90%;"></td>
+<th>驗收部門</th><td><select id="assetType3" name="inspection_department" style="height: 30px; width: 90%;" required></select></td>
+<th>財產編號</th><td><input type="text" name="asset_no" style="height: 30px; width: 90%;"></td>
+</tr>
+</table>
+<br>
+     
+<table>
+<tr><th>附件內容</th></tr>
+<tr><td style="height: 50px;">
+<input type="checkbox" name="attachments[]" value="發票號碼"> 發票號碼 (L/C NO <input type="text" name="invoice_no">)
+<input type="checkbox" name="attachments[]" value="合約書"> 合約書
+<input type="checkbox" name="attachments[]" value="工程(機械)圖"> 工程(機械)圖
+<input type="checkbox" name="attachments[]" value="估價單"> 估價單
+<input type="checkbox" name="attachments[]" value="送貨單"> 送貨單
+<input type="checkbox" name="attachments[]" value="保固書"> 保固書
+<input type="checkbox" name="attachments[]" value="型式目錄"> 型式目錄
+<input type="checkbox" name="attachments[]" value="材質證明"> 材質證明<br>
+<input type="checkbox" name="attachments[]" value="檢驗報告"> 檢驗報告
+<input type="checkbox" name="attachments[]" value="財產異動單"> 財產異動單
+<input type="checkbox" name="attachments[]" value="工廠登記證"> 工廠登記證
+<input type="checkbox" name="attachments[]" value="進口報單"> 進口報單
+<input type="checkbox" name="attachments[]" value="其他"> 其他 <input type="text" name="other_attachment">
+</tr>
+</table>
+<br>
+   
+<label>驗收情況:</label>
+<button type="button" onclick="addRow()">新增項目</button>
+<table id="inspectionTable">
+<tr>
+<th>驗收項目說明</th>
+<th style="width: 1%;">合格</th>
+<th style="width: 1%;">不合格</th>
+<th style="width: 1%;">操作</th> 
+</tr>
+</table>
+<br>
+
+<table>  
+<tr>
+<th>驗收單位意見</th><th>生產(會簽)單位意見</th>
+</tr>
+  
+<tr>
+<td style="height: 400px;">
+<textarea name="inspection_comments" style="height: 400px;" class="custom-textarea" required></textarea>
+</td>
+<td style="height: 400px;">
+<textarea name="production_comments" style="height: 400px;" class="custom-textarea" required></textarea>
+</td>
+</tr>
+</table>
+
+<br>
+<table>
+<tr>
+<th>管理部-財產異動單</th>
+</tr>
+<tr>
+<td style="height: 100px;">
+<textarea name="asset_change_comments" style="height: 100px;" class="custom-textarea" placeholder="請填寫異動內容" required></textarea>
+</td>
+</tr>
+<tr class="file-upload-container">
+<td>
+<label for="photoUpload">上傳照片：</label>
+<input type="file" name="photos[]" id="photoUpload" accept="image/*" multiple><br><br>
+<div id="imagePreviewContainer">
+<img id="uploaded-image" src="" alt="預覽圖片">
+<button type="button" id="cancelUpload" class="delete-btn">取消上傳</button>
+</div>
+</td>
+</tr>
+</table>
+</form> 
+</div>
+
+<script></script>
+</body>
+
+<footer>
+<p>表單編號: 0O4-02 </p>
+<p>簽核流程:採購開立>製程工程師>製程工程主管>生產單位>生產單位主管>廠長>副總>總經理>管理部</p>
+</footer> 
+</html>
